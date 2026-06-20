@@ -16,7 +16,7 @@ export const site = {
     youtube: "https://www.youtube.com/@xplainery",
   },
   founder: {
-    name: "Felix Graef",
+    name: "Janine Waletzke",
     role: "Founder & Lead AI Educator",
   },
 } as const;

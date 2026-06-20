@@ -355,10 +355,10 @@ const es: Dictionary = {
   },
 
   founder: {
-    eyebrow: "Sobre el fundador",
-    title: "Hola, soy Felix: hago que la IA tenga sentido",
-    name: "Felix Graef",
-    role: "Fundador y educador principal de IA",
+    eyebrow: "Sobre la fundadora",
+    title: "Hola, soy Janine: hago que la IA tenga sentido",
+    name: "Janine Waletzke",
+    role: "Fundadora y educadora principal de IA",
     paragraphs: [
       "Fundé Xplainery porque veía una y otra vez la misma carencia: equipos brillantes rodeados de potentes herramientas de IA, pero sin saber cómo usarlas en su trabajo real del día a día.",
       "Mi enfoque es sencillo: dejar atrás el ruido y los tecnicismos, y centrarse en el puñado de habilidades que de verdad cambian su forma de trabajar. No hace falta una carrera en informática.",
@@ -382,7 +382,7 @@ const es: Dictionary = {
     items: [
       {
         quote:
-          "En dos semanas, nuestro equipo pasó de ser escéptico con la IA a crear sus propios flujos de trabajo. Felix hace que todo encaje: sin tecnicismos, solo resultados.",
+          "En dos semanas, nuestro equipo pasó de ser escéptico con la IA a crear sus propios flujos de trabajo. Janine hace que todo encaje: sin tecnicismos, solo resultados.",
         name: "Marta Sánchez",
         role: "Directora de Operaciones",
         company: "Lumen Consulting, Madrid",
@@ -396,7 +396,7 @@ const es: Dictionary = {
       },
       {
         quote:
-          "Felix dio una conferencia a 400 personas y, de algún modo, logró que se sintiera personal. Por fin nuestra dirección se alineó en torno a un plan de IA.",
+          "Janine dio una conferencia a 400 personas y, de algún modo, logró que se sintiera personal. Por fin nuestra dirección se alineó en torno a un plan de IA.",
         name: "Claire Dubois",
         role: "Directora de Personas",
         company: "Atelier Group, París",

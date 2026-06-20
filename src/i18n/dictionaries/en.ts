@@ -354,8 +354,8 @@ const en = {
 
   founder: {
     eyebrow: "About the Founder",
-    title: "Hi, I'm Felix — I make AI make sense",
-    name: "Felix Graef",
+    title: "Hi, I'm Janine — I make AI make sense",
+    name: "Janine Waletzke",
     role: "Founder & Lead AI Educator",
     paragraphs: [
       "I started Xplainery because I kept seeing the same gap: brilliant teams surrounded by powerful AI tools, but unsure how to use them for real, everyday work.",
@@ -380,7 +380,7 @@ const en = {
     items: [
       {
         quote:
-          "Within two weeks our team went from AI-skeptical to building their own workflows. Felix makes it click — no jargon, just results.",
+          "Within two weeks our team went from AI-skeptical to building their own workflows. Janine makes it click — no jargon, just results.",
         name: "Marta Sánchez",
         role: "Head of Operations",
         company: "Lumen Consulting, Madrid",
@@ -394,7 +394,7 @@ const en = {
       },
       {
         quote:
-          "Felix delivered a keynote to 400 people and somehow made it feel personal. Our leadership finally aligned on an AI plan.",
+          "Janine delivered a keynote to 400 people and somehow made it feel personal. Our leadership finally aligned on an AI plan.",
         name: "Claire Dubois",
         role: "Chief People Officer",
         company: "Atelier Group, Paris",

@@ -355,10 +355,10 @@ const de: Dictionary = {
   },
 
   founder: {
-    eyebrow: "Über den Gründer",
-    title: "Hallo, ich bin Felix — ich mache KI verständlich",
-    name: "Felix Graef",
-    role: "Gründer & Lead AI Educator",
+    eyebrow: "Über die Gründerin",
+    title: "Hallo, ich bin Janine — ich mache KI verständlich",
+    name: "Janine Waletzke",
+    role: "Gründerin & Lead AI Educator",
     paragraphs: [
       "Ich habe Xplainery gegründet, weil ich immer wieder dieselbe Lücke sah: großartige Teams umgeben von mächtigen KI-Tools, aber unsicher, wie sie diese für die echte, alltägliche Arbeit nutzen.",
       "Mein Ansatz ist einfach — Hype und Fachjargon beiseitelassen und sich auf die wenigen Fähigkeiten konzentrieren, die Ihre Arbeit wirklich verändern. Kein Informatikstudium erforderlich.",
@@ -382,7 +382,7 @@ const de: Dictionary = {
     items: [
       {
         quote:
-          "Innerhalb von zwei Wochen wurde unser Team vom KI-Skeptiker zum Erbauer eigener Workflows. Felix bringt es auf den Punkt — kein Fachjargon, nur Ergebnisse.",
+          "Innerhalb von zwei Wochen wurde unser Team vom KI-Skeptiker zum Erbauer eigener Workflows. Janine bringt es auf den Punkt — kein Fachjargon, nur Ergebnisse.",
         name: "Marta Sánchez",
         role: "Leiterin Operations",
         company: "Lumen Consulting, Madrid",
@@ -396,7 +396,7 @@ const de: Dictionary = {
       },
       {
         quote:
-          "Felix hielt eine Keynote vor 400 Menschen und schaffte es irgendwie, dass sie sich persönlich anfühlte. Unsere Führung einigte sich endlich auf einen KI-Plan.",
+          "Janine hielt eine Keynote vor 400 Menschen und schaffte es irgendwie, dass sie sich persönlich anfühlte. Unsere Führung einigte sich endlich auf einen KI-Plan.",
         name: "Claire Dubois",
         role: "Chief People Officer",
         company: "Atelier Group, Paris",
