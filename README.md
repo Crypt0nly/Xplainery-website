@@ -86,8 +86,8 @@ dictionary file typed as `Dictionary`, and register it in `src/i18n/index.ts`.
 
 Edit `src/lib/site.ts`:
 
-- `bookingUrl` — your real scheduling link (Cal.com / Calendly / HubSpot) for
-  the **“Book a Free Discovery Call”** CTAs.
+- `bookingUrl` — the scheduling link for the **“Book a Free Discovery Call”**
+  CTAs. Set to Janine's Google Calendar appointment page.
 - `email`, `social.*`, `founder.*`, `url`/`domain`.
 
 Wire up form submissions:

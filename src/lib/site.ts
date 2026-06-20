@@ -8,8 +8,8 @@ export const site = {
   url: "https://xplainery.com",
   email: "hello@xplainery.com",
   // Booking link for the "Book a Free Discovery Call" CTA.
-  // Replace with your real Cal.com / Calendly / HubSpot scheduling URL.
-  bookingUrl: "https://cal.com/xplainery/discovery-call",
+  // Janine's Google Calendar appointment scheduling page.
+  bookingUrl: "https://calendar.app.google/JFGA1XPMQhBL391K6",
   social: {
     linkedin: "https://www.linkedin.com/company/xplainery",
     twitter: "https://x.com/xplainery",
