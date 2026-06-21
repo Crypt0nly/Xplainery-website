@@ -2,6 +2,7 @@ import { Quote, CalendarCheck, Linkedin } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
+import { FounderPhoto } from "./FounderPhoto";
 
 export function Founder({ dict }: { dict: Dictionary }) {
   const t = dict.founder;
@@ -20,12 +21,13 @@ export function Founder({ dict }: { dict: Dictionary }) {
             <div className="relative mx-auto max-w-sm">
               <div className="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand/20 to-accent/20 blur-2xl" />
               <div className="overflow-hidden rounded-4xl border border-line bg-surface shadow-card">
-                <div className="relative flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-brand via-brand to-accent">
-                  <div className="absolute inset-0 grid-pattern opacity-20" />
-                  <span className="font-display text-7xl font-bold text-white/90">
-                    {initials}
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent p-6">
+                <div className="relative">
+                  <FounderPhoto
+                    src={site.founder.photo}
+                    name={t.name}
+                    initials={initials}
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-6">
                     <p className="font-display text-xl font-bold text-white">
                       {t.name}
                     </p>

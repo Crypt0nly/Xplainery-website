@@ -18,6 +18,8 @@ export const site = {
   founder: {
     name: "Janine Waletzke",
     role: "Founder & Lead AI Educator",
+    // Portrait photo served from /public. Falls back to initials if missing.
+    photo: "/janine.jpg",
   },
 } as const;
 
