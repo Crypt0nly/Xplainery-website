@@ -111,6 +111,11 @@ const de: Dictionary = {
     subtitle:
       "Von individuellem Coaching über unternehmensweite Befähigung bis zur Keynote-Bühne — wählen Sie das Format, das zu Ihrem Team passt.",
     bookCta: "Kostenloses Erstgespräch buchen",
+    bestForLabel: "Ideal für",
+    ctaTitle: "Nicht sicher, welches Format passt?",
+    ctaBody:
+      "Jedes Format steht allen offen — die Angaben zeigen nur, für wen es sich am besten eignet. Erzählen Sie uns von Ihrem Team und Ihren Zielen, und wir empfehlen das Passende.",
+    ctaSecondary: "Anfrage senden",
     items: [
       {
         icon: "User",

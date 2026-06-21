@@ -109,6 +109,11 @@ const en = {
     subtitle:
       "From individual coaching to company-wide enablement and the keynote stage — choose the format that fits your team.",
     bookCta: "Book a Free Discovery Call",
+    bestForLabel: "Best for",
+    ctaTitle: "Not sure which format fits?",
+    ctaBody:
+      "Every format is open to anyone — the labels just show who each one suits best. Tell us about your team and goals, and we'll recommend the right fit.",
+    ctaSecondary: "Send an inquiry",
     items: [
       {
         icon: "User",

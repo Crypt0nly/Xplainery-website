@@ -111,6 +111,11 @@ const es: Dictionary = {
     subtitle:
       "Desde el coaching individual hasta la capacitación de toda la empresa y el escenario de las conferencias: elija el formato que mejor se adapte a su equipo.",
     bookCta: "Reserve una llamada de diagnóstico gratuita",
+    bestForLabel: "Ideal para",
+    ctaTitle: "¿No sabe qué formato encaja mejor?",
+    ctaBody:
+      "Todos los formatos están abiertos a cualquiera; las etiquetas solo indican para quién encaja mejor cada uno. Cuéntenos sobre su equipo y sus objetivos y le recomendaremos la mejor opción.",
+    ctaSecondary: "Enviar una consulta",
     items: [
       {
         icon: "User",
