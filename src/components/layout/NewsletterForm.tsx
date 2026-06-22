@@ -18,7 +18,7 @@ export function NewsletterForm({ dict }: { dict: Dictionary["footer"]["newslette
   if (done) {
     return (
       <p className="flex items-center gap-2 text-sm text-ink">
-        <Check className="h-4 w-4 text-brand" strokeWidth={2.5} />
+        <Check className="h-4 w-4 text-brand-ink" strokeWidth={2.5} />
         {dict.success}
       </p>
     );

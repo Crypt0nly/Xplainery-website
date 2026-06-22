@@ -102,7 +102,7 @@ function FooterCol({
           <li key={`${l.href}-${i}`}>
             <a
               href={l.href}
-              className="text-sm text-muted transition-colors hover:text-brand"
+              className="text-sm text-muted transition-colors hover:text-brand-ink"
             >
               {l.label}
             </a>
@@ -128,7 +128,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-bg text-muted transition-colors hover:border-brand/40 hover:text-brand"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-bg text-muted transition-colors hover:border-brand/40 hover:text-brand-ink"
     >
       {children}
     </a>

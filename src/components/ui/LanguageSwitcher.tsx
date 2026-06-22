@@ -74,7 +74,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
                   <span className="font-medium">{localeMeta[l].native}</span>
                 </span>
                 {l === locale && (
-                  <Check className="h-4 w-4 text-brand" strokeWidth={2.25} />
+                  <Check className="h-4 w-4 text-brand-ink" strokeWidth={2.25} />
                 )}
               </button>
             </li>

@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    /* Light theme — warm, premium neutrals (Notion/Apple inspired) */
-    --bg: 250 250 249; /* warm near-white */
+    /* Light theme — off-white with sage-tinted neutrals (Apple/Notion feel) */
+    --bg: 247 249 246; /* #F7F9F6 */
     --surface: 255 255 255;
     --elevated: 255 255 255;
-    --ink: 13 15 23; /* near-black */
-    --muted: 82 82 91;
-    --subtle: 113 113 122;
-    --line: 228 228 231;
+    --ink: 9 20 13; /* #09140D near-black green */
+    --muted: 74 90 80; /* #4A5A50 */
+    --subtle: 107 120 112; /* #6B7870 */
+    --line: 224 230 224; /* sage-tinted border */
 
-    /* Brand — refined iris/indigo (Stripe inspired) with cyan accent */
-    --brand: 84 76 214; /* iris */
-    --brand-soft: 238 238 252;
-    --brand-ink: 60 50 175;
-    --accent: 34 211 238; /* cyan */
+    /* Brand — lime pop + deep forest green (logo palette) */
+    --brand: 102 247 69; /* #66F745 lime — fills/pops, use with dark text */
+    --brand-soft: 232 252 223; /* pale lime tint */
+    --brand-ink: 19 99 41; /* #136329 readable emerald — links/labels/text */
+    --accent: 10 40 16; /* #0A2810 deep forest — dark gradients/decor */
   }
 
   .dark {
-    --bg: 9 9 14;
-    --surface: 18 18 27;
-    --elevated: 24 24 35;
-    --ink: 244 244 246;
-    --muted: 168 168 180;
-    --subtle: 140 140 155;
-    --line: 38 38 52;
+    --bg: 7 12 9; /* #070C09 */
+    --surface: 13 21 16; /* #0D1510 */
+    --elevated: 19 29 22;
+    --ink: 240 245 240;
+    --muted: 164 180 168;
+    --subtle: 132 148 137;
+    --line: 30 42 33;
 
-    --brand: 139 132 255;
-    --brand-soft: 32 30 60;
-    --brand-ink: 178 172 255;
-    --accent: 56 220 248;
+    --brand: 112 248 80;
+    --brand-soft: 22 44 26;
+    --brand-ink: 138 240 122; /* light lime for links on dark */
+    --accent: 28 92 46;
   }
 
   * {
@@ -66,12 +66,12 @@
   }
 
   ::selection {
-    background-color: rgb(var(--brand) / 0.18);
+    background-color: rgb(var(--brand) / 0.35);
     color: rgb(var(--ink));
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--brand));
+    outline: 2px solid rgb(var(--brand-ink));
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -82,12 +82,13 @@
     @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8;
   }
 
+  /* Brand text/links must stay readable, so use the emerald brand-ink, not lime */
   .text-gradient {
-    @apply bg-gradient-to-r from-brand via-brand to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-ink to-brand-ink bg-clip-text text-transparent;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand;
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink;
   }
 
   .card {
@@ -98,20 +99,22 @@
     @apply inline-flex select-none items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
+  /* Primary CTA: lime fill with near-black text (high contrast, on-brand pop) */
+  .btn-brand {
+    @apply btn bg-brand px-5 py-3 text-[#08140d] hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0;
+  }
+
+  /* Dark CTA: deep ink/forest with light text */
   .btn-primary {
     @apply btn bg-ink px-5 py-3 text-bg hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0;
   }
 
-  .btn-brand {
-    @apply btn bg-brand px-5 py-3 text-white hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0;
-  }
-
   .btn-ghost {
-    @apply btn border border-line bg-surface px-5 py-3 text-ink hover:border-brand/40 hover:bg-brand-soft;
+    @apply btn border border-line bg-surface px-5 py-3 text-ink hover:border-brand-ink/40 hover:bg-brand-soft;
   }
 
   .input {
-    @apply w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink placeholder:text-subtle transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20;
+    @apply w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink placeholder:text-subtle transition-colors focus:border-brand-ink focus:outline-none focus:ring-2 focus:ring-brand/30;
   }
 }
 

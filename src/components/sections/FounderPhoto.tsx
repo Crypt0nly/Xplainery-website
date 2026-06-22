@@ -18,7 +18,7 @@ export function FounderPhoto({
   const [ok, setOk] = useState(Boolean(src));
 
   return (
-    <div className="relative flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-brand via-brand to-accent">
+    <div className="relative flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-brand-ink to-accent">
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
       {ok && src ? (

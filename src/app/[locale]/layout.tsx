@@ -27,8 +27,8 @@ export function generateStaticParams() {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090e" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f9f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#070c09" },
   ],
 };
 
@@ -106,7 +106,7 @@ export default async function LocaleLayout({
       <body className="bg-bg font-sans text-ink antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#08140d]"
         >
           Skip to content
         </a>

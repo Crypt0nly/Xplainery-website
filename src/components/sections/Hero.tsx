@@ -94,15 +94,15 @@ export function Hero({ dict }: { dict: Dictionary }) {
             className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-subtle"
           >
             <span className="inline-flex items-center gap-1.5">
-              <Check className="h-4 w-4 text-brand" strokeWidth={2.5} />
+              <Check className="h-4 w-4 text-brand-ink" strokeWidth={2.5} />
               {dict.common.free}
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Check className="h-4 w-4 text-brand" strokeWidth={2.5} />
+              <Check className="h-4 w-4 text-brand-ink" strokeWidth={2.5} />
               {dict.common.minutes}
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Check className="h-4 w-4 text-brand" strokeWidth={2.5} />
+              <Check className="h-4 w-4 text-brand-ink" strokeWidth={2.5} />
               {dict.common.noObligation}
             </span>
           </motion.div>
@@ -161,12 +161,12 @@ function HeroVisual({
         </div>
         <div className="space-y-4 p-5">
           <div className="flex justify-end">
-            <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-brand px-4 py-2.5 text-sm text-white">
+            <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-brand px-4 py-2.5 text-sm text-[#08140d]">
               {t.floatingCards.one}
             </div>
           </div>
           <div className="flex gap-2.5">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-accent text-[10px] font-bold text-white">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-ink to-accent text-[10px] font-bold text-white">
               AI
             </div>
             <div className="max-w-[85%] space-y-2 rounded-2xl rounded-tl-sm border border-line bg-bg px-4 py-3">
@@ -174,7 +174,7 @@ function HeroVisual({
               <div className="h-2.5 w-52 rounded-full bg-line" />
               <div className="h-2.5 w-36 rounded-full bg-line" />
               <div className="mt-3 flex gap-2">
-                <span className="rounded-lg bg-brand-soft px-2 py-1 text-[11px] font-medium text-brand">
+                <span className="rounded-lg bg-brand-soft px-2 py-1 text-[11px] font-medium text-brand-ink">
                   Draft ready
                 </span>
                 <span className="rounded-lg bg-accent/10 px-2 py-1 text-[11px] font-medium text-accent">
@@ -185,7 +185,7 @@ function HeroVisual({
           </div>
           <div className="flex items-center gap-2 rounded-2xl border border-line bg-bg px-4 py-3">
             <div className="h-2.5 flex-1 rounded-full bg-line" />
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-white">
+            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-[#08140d]">
               <ArrowRight className="h-4 w-4" strokeWidth={2.25} />
             </div>
           </div>
@@ -212,7 +212,7 @@ function HeroVisual({
         <p className="text-xs font-medium text-subtle">
           {t.floatingCards.three.split(":")[0]}
         </p>
-        <p className="font-display text-xl font-bold text-brand">
+        <p className="font-display text-xl font-bold text-brand-ink">
           {t.floatingCards.three.split(":")[1] ?? "6.5 hrs"}
         </p>
       </motion.div>

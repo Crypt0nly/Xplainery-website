@@ -64,7 +64,7 @@ export function AIReadinessAssessment({ dict }: { dict: Dictionary }) {
     <div className="flex h-full flex-col overflow-hidden rounded-4xl border border-line bg-bg shadow-card">
       {/* Header */}
       <div className="flex items-center gap-3 border-b border-line bg-gradient-to-r from-brand-soft to-transparent px-6 py-5">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-white">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-[#08140d]">
           <Gauge className="h-5 w-5" strokeWidth={2} />
         </div>
         <div>
@@ -123,7 +123,7 @@ export function AIReadinessAssessment({ dict }: { dict: Dictionary }) {
               transition={{ duration: 0.3 }}
               className="flex flex-1 flex-col"
             >
-              <p className="text-xs font-semibold uppercase tracking-wide text-brand">
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-ink">
                 {t.questionLabel} {current + 1} {t.ofLabel} {questions.length}
               </p>
               <h4 className="mt-2 font-display text-xl font-bold leading-snug text-ink">
@@ -155,7 +155,7 @@ export function AIReadinessAssessment({ dict }: { dict: Dictionary }) {
                         )}
                       >
                         {selected && (
-                          <span className="h-2 w-2 rounded-full bg-white" />
+                          <span className="h-2 w-2 rounded-full bg-[#08140d]" />
                         )}
                       </span>
                     </button>
@@ -218,7 +218,7 @@ export function AIReadinessAssessment({ dict }: { dict: Dictionary }) {
               </p>
 
               <div className="mt-5 rounded-2xl border border-brand/20 bg-brand-soft/60 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-brand">
+                <p className="text-xs font-semibold uppercase tracking-wide text-brand-ink">
                   {t.recommendationLabel}
                 </p>
                 <p className="mt-1 text-sm font-medium text-ink">

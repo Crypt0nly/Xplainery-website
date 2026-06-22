@@ -30,7 +30,7 @@ export function FAQ({ dict }: { dict: Dictionary }) {
             <Reveal className="mt-8" delay={0.1}>
               <div className="rounded-3xl border border-line bg-bg p-6">
                 <HelpCircle
-                  className="h-7 w-7 text-brand"
+                  className="h-7 w-7 text-brand-ink"
                   strokeWidth={1.75}
                 />
                 <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -68,7 +68,7 @@ export function FAQ({ dict }: { dict: Dictionary }) {
                         className={cn(
                           "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
                           isOpen
-                            ? "rotate-45 border-brand bg-brand text-white"
+                            ? "rotate-45 border-brand bg-brand text-[#08140d]"
                             : "border-line bg-surface text-muted",
                         )}
                       >

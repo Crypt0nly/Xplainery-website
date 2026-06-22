@@ -31,7 +31,7 @@ export function Pricing({ dict }: { dict: Dictionary }) {
                 )}
               >
                 {plan.featured && (
-                  <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white shadow-glow">
+                  <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-xs font-semibold text-[#08140d] shadow-glow">
                     <Star className="h-3.5 w-3.5 fill-current" strokeWidth={0} />
                     {t.popularLabel}
                   </span>
@@ -67,8 +67,8 @@ export function Pricing({ dict }: { dict: Dictionary }) {
                         className={cn(
                           "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full",
                           plan.featured
-                            ? "bg-brand text-white"
-                            : "bg-brand-soft text-brand",
+                            ? "bg-brand text-[#08140d]"
+                            : "bg-brand-soft text-brand-ink",
                         )}
                       >
                         <Check className="h-3 w-3" strokeWidth={3} />
@@ -110,7 +110,7 @@ export function Pricing({ dict }: { dict: Dictionary }) {
                   key={item}
                   className="flex items-center gap-2 text-sm text-muted"
                 >
-                  <Check className="h-4 w-4 shrink-0 text-brand" strokeWidth={2.5} />
+                  <Check className="h-4 w-4 shrink-0 text-brand-ink" strokeWidth={2.5} />
                   {item}
                 </li>
               ))}

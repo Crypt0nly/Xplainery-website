@@ -26,7 +26,7 @@ export function Services({ dict }: { dict: Dictionary }) {
                 <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/5 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-accent text-white shadow-glow">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-ink to-accent text-white shadow-glow">
                     <Icon name={service.icon} className="h-7 w-7" />
                   </div>
                   <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-semibold text-subtle">
@@ -48,7 +48,7 @@ export function Services({ dict }: { dict: Dictionary }) {
                       className="flex items-start gap-2 text-sm text-ink"
                     >
                       <Check
-                        className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-brand-ink"
                         strokeWidth={2.5}
                       />
                       <span>{f}</span>
@@ -62,7 +62,7 @@ export function Services({ dict }: { dict: Dictionary }) {
                     {t.bestForLabel}
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3 py-1.5 text-sm font-semibold text-brand-ink">
-                    <Target className="h-3.5 w-3.5 text-brand" strokeWidth={2.25} />
+                    <Target className="h-3.5 w-3.5 text-brand-ink" strokeWidth={2.25} />
                     {service.bestFor}
                   </span>
                 </div>

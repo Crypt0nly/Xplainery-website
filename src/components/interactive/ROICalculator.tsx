@@ -132,7 +132,7 @@ function SliderField({
     <div>
       <div className="flex items-baseline justify-between gap-3">
         <label className="text-sm font-medium text-ink">{label}</label>
-        <span className="font-display text-lg font-bold text-brand">
+        <span className="font-display text-lg font-bold text-brand-ink">
           {display}
         </span>
       </div>
@@ -175,14 +175,14 @@ function ResultStat({
     >
       <div
         className={`inline-flex h-8 w-8 items-center justify-center rounded-lg ${
-          highlight ? "bg-brand text-white" : "bg-brand-soft text-brand"
+          highlight ? "bg-brand text-[#08140d]" : "bg-brand-soft text-brand-ink"
         }`}
       >
         {icon}
       </div>
       <p
         className={`mt-3 font-display text-xl font-bold ${
-          highlight ? "text-brand" : "text-ink"
+          highlight ? "text-brand-ink" : "text-ink"
         }`}
       >
         {value}

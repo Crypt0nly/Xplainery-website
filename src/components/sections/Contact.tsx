@@ -51,9 +51,9 @@ export function Contact({ dict }: { dict: Dictionary }) {
         <div className="mt-16 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Booking card */}
           <Reveal className="flex flex-col gap-6">
-            <div className="relative overflow-hidden rounded-4xl border border-brand/20 bg-gradient-to-br from-brand to-brand p-8 text-white shadow-glow">
-              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15">
+            <div className="relative overflow-hidden rounded-4xl border border-brand-ink/30 bg-gradient-to-br from-[#0a2810] to-[#0f3d1c] p-8 text-white shadow-glow">
+              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand/20 blur-2xl" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/20 text-brand">
                 <CalendarCheck className="h-6 w-6" strokeWidth={2} />
               </div>
               <h3 className="mt-5 font-display text-xl font-bold">
@@ -66,7 +66,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
                 href={site.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn mt-6 bg-white !px-6 !py-3.5 text-base text-brand hover:-translate-y-0.5 hover:shadow-lift"
+                className="btn mt-6 bg-white !px-6 !py-3.5 text-base text-brand-ink hover:-translate-y-0.5 hover:shadow-lift"
               >
                 <CalendarCheck className="h-5 w-5" strokeWidth={2} />
                 {t.bookCta}
@@ -77,7 +77,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
               <p className="text-sm font-semibold text-ink">{t.orEmail}</p>
               <a
                 href={`mailto:${site.email}`}
-                className="mt-3 inline-flex items-center gap-2 text-brand transition-colors hover:text-brand-ink"
+                className="mt-3 inline-flex items-center gap-2 text-brand-ink transition-colors hover:text-brand-ink"
               >
                 <Mail className="h-4 w-4" strokeWidth={2} />
                 <span className="font-medium">{site.email}</span>
@@ -92,7 +92,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
                 <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-soft">
                     <CheckCircle2
-                      className="h-8 w-8 text-brand"
+                      className="h-8 w-8 text-brand-ink"
                       strokeWidth={2}
                     />
                   </div>
@@ -204,7 +204,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
                   <p className="flex items-start gap-2 text-xs leading-relaxed text-subtle">
                     <ShieldCheck
-                      className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-brand-ink"
                       strokeWidth={1.75}
                     />
                     {f.privacy}

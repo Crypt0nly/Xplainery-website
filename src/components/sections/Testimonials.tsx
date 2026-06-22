@@ -8,11 +8,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 
 const AVATAR_GRADIENTS = [
-  "from-brand to-accent",
-  "from-accent to-brand",
-  "from-fuchsia-500 to-brand",
-  "from-brand to-emerald-400",
-  "from-amber-400 to-brand",
+  "from-brand-ink to-accent",
+  "from-accent to-brand-ink",
+  "from-emerald-700 to-accent",
+  "from-brand-ink to-emerald-800",
+  "from-accent to-emerald-700",
 ];
 
 export function Testimonials({ dict }: { dict: Dictionary }) {
