@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import "../globals.css";
+import { DesignSwitcher } from "@/components/DesignSwitcher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function V2Layout({
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="font-sans antialiased" style={{ background: "#f4f1e6", color: "#09140d" }}>
         {children}
+        <DesignSwitcher active="B" />
       </body>
     </html>
   );
