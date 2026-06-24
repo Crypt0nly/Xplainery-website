@@ -31,11 +31,6 @@ function getPreferredLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // The /v2 design concept is locale-agnostic; don't redirect it into /<locale>.
-  if (pathname === "/v2" || pathname.startsWith("/v2/")) {
-    return NextResponse.next();
-  }
-
   const hasLocale = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );

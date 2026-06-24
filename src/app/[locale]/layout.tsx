@@ -7,7 +7,6 @@ import { getDictionary } from "@/i18n";
 import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { DesignSwitcher } from "@/components/DesignSwitcher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -114,7 +113,6 @@ export default async function LocaleLayout({
         <Header dict={dict} locale={locale} />
         <main id="main">{children}</main>
         <Footer dict={dict} locale={locale} />
-        <DesignSwitcher active="A" />
       </body>
     </html>
   );
