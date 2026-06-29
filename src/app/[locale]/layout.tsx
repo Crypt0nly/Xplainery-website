@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Manrope, Exo_2 } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { locales, isLocale, type Locale, localeMeta } from "@/i18n/config";
@@ -8,13 +8,13 @@ import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const sora = Sora({
+const exo2 = Exo_2({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["500", "600", "700", "800"],
@@ -97,7 +97,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={localeMeta[locale].htmlLang}
-      className={`${inter.variable} ${sora.variable}`}
+      className={`${manrope.variable} ${exo2.variable}`}
       suppressHydrationWarning
     >
       <head>
