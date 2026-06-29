@@ -11,6 +11,7 @@ const de: Dictionary = {
   nav: {
     why: "Warum Xplainery",
     services: "Leistungen",
+    solutions: "Anwendungsfälle",
     tools: "Kostenlose Tools",
     pricing: "Preise",
     about: "Gründer",
@@ -536,6 +537,110 @@ const de: Dictionary = {
       "Buchen Sie ein kostenloses 30-minütiges Erstgespräch. Keine Folien, keine Verpflichtung — nur ein klarer nächster Schritt.",
     primary: "Kostenloses Erstgespräch buchen",
     secondary: "Preise ansehen",
+  },
+
+  useCases: {
+    eyebrow: "Finden Sie Ihre Quick Wins",
+    title: "Wo könnte KI Ihnen am meisten helfen?",
+    subtitle:
+      "Wählen Sie einen Bereich, in dem Sie zu viel Zeit verlieren. Sehen Sie genau, wie KI Sie entlasten könnte — und wie wir das mit Ihrem Team einrichten.",
+    selectHint: "Bereich wählen",
+    withAi: "Mit KI können Sie",
+    promptLabel: "Sie fragen",
+    resultLabel: "Sie erhalten",
+    cta: "Mit Ihrem Team einrichten",
+    areas: [
+      {
+        id: "email",
+        icon: "Mail",
+        name: "E-Mail & Kontaktaufnahme",
+        pain: "Newsletter, Antworten und Akquise fressen jede Woche unbemerkt Stunden.",
+        solutions: [
+          "Markengerechte Newsletter und Follow-up-Sequenzen in Minuten entwerfen",
+          "Aus groben Notizen ausgefeilte, persönliche Antworten machen",
+          "Betreffzeilen testen und Nachrichten skalierbar personalisieren",
+        ],
+        examplePrompt:
+          "Schreibe eine 3-teilige Reaktivierungs-Serie für Kunden, von denen wir seit 6 Monaten nichts gehört haben — in unserem warmen, direkten Ton.",
+        exampleResult:
+          "Eine bearbeitungsfertige Serie in Sekunden — statt leerem Blatt und verlorenem Nachmittag.",
+      },
+      {
+        id: "content",
+        icon: "Megaphone",
+        name: "Marketing & Content",
+        pain: "Ein Redaktionsplan, der sich nie von allein füllt.",
+        solutions: [
+          "Aus einer Idee einen Monat an Social-Media-Posts erstellen",
+          "Einen Blogartikel zu LinkedIn-Posts, E-Mails und Captions weiterverwenden",
+          "Überall konsistent in Ihrer Markenstimme bleiben",
+        ],
+        examplePrompt:
+          "Mach aus dieser Fallstudie fünf LinkedIn-Posts und einen kurzen Newsletter — in unserem Ton.",
+        exampleResult:
+          "Eine Woche Content aus einem Dokument — entworfen, markengerecht und planbereit.",
+      },
+      {
+        id: "sales",
+        icon: "Briefcase",
+        name: "Vertrieb & Angebote",
+        pain: "Angebote und Follow-ups bremsen Ihre gesamte Pipeline.",
+        solutions: [
+          "Angebote in Minuten auf jeden Kunden zuschneiden",
+          "Gespräche in klare nächste Schritte und CRM-Notizen zusammenfassen",
+          "Rechtzeitige Follow-ups entwerfen, damit nichts liegen bleibt",
+        ],
+        examplePrompt:
+          "Entwirf aus diesen Besprechungsnotizen ein Angebot, gegliedert in Ziele, Umfang und Preis.",
+        exampleResult:
+          "Ein kundenfertiger erster Entwurf in einer Kaffeepause statt an einem Tag.",
+      },
+      {
+        id: "support",
+        icon: "Headphones",
+        name: "Kundensupport",
+        pain: "Wiederkehrende Fragen stapeln sich und die Antwortzeiten leiden.",
+        solutions: [
+          "Sofort treffende Antworten im richtigen Ton entwerfen",
+          "Aus vergangenen Tickets eine smarte FAQ aufbauen",
+          "Ein volles Postfach triagieren und priorisieren",
+        ],
+        examplePrompt:
+          "Antworte diesem verärgerten Kunden empathisch, erkenne das Problem an und biete zwei Optionen.",
+        exampleResult:
+          "Einheitliche, freundliche Antworten — schneller und ohne Copy-Paste.",
+      },
+      {
+        id: "research",
+        icon: "Search",
+        name: "Recherche & Berichte",
+        pain: "Stunden gehen beim Sammeln, Lesen und Zusammenfassen verloren.",
+        solutions: [
+          "Lange Dokumente und Meetings in Sekunden zusammenfassen",
+          "Optionen vergleichen und klare Briefings entwerfen",
+          "Rohdaten in verständliche Erkenntnisse verwandeln",
+        ],
+        examplePrompt:
+          "Fasse diesen 40-seitigen Bericht in zehn Punkten für unsere Führung zusammen, mit drei empfohlenen Maßnahmen.",
+        exampleResult:
+          "Das Wesentliche in zwei Minuten — damit Sie entscheiden, statt nur zu lesen.",
+      },
+      {
+        id: "admin",
+        icon: "ClipboardList",
+        name: "Admin & Abläufe",
+        pain: "Terminplanung, Dokumentation und Dateneingabe rauben den Fokus.",
+        solutions: [
+          "SOPs und Dokumentation in Ihrem Format entwerfen",
+          "Unübersichtliche Daten und Notizen bereinigen und strukturieren",
+          "Die täglichen Routine-Texte automatisieren",
+        ],
+        examplePrompt:
+          "Mach aus dieser groben Checkliste eine klare, Schritt-für-Schritt-SOP, der ein neuer Mitarbeiter folgen kann.",
+        exampleResult:
+          "Dokumentation, die sich fast von selbst schreibt — und konsistent bleibt.",
+      },
+    ],
   },
 };
 

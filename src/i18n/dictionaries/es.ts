@@ -11,6 +11,7 @@ const es: Dictionary = {
   nav: {
     why: "Por qué Xplainery",
     services: "Servicios",
+    solutions: "Casos de uso",
     tools: "Herramientas gratuitas",
     pricing: "Precios",
     about: "Fundador",
@@ -536,6 +537,110 @@ const es: Dictionary = {
       "Reserve una llamada de diagnóstico gratuita de 30 minutos. Sin diapositivas, sin compromiso: solo un siguiente paso claro.",
     primary: "Reserve una llamada de diagnóstico gratuita",
     secondary: "Ver precios",
+  },
+
+  useCases: {
+    eyebrow: "Encuentre sus victorias rápidas",
+    title: "¿Dónde podría ayudarle más la IA?",
+    subtitle:
+      "Elija un área en la que pierda demasiado tiempo. Verá exactamente cómo la IA podría aliviar la carga — y cómo lo pondríamos en marcha con su equipo.",
+    selectHint: "Elija un área",
+    withAi: "Con IA podría",
+    promptLabel: "Usted pide",
+    resultLabel: "Usted obtiene",
+    cta: "Póngalo en marcha con su equipo",
+    areas: [
+      {
+        id: "email",
+        icon: "Mail",
+        name: "Email y prospección",
+        pain: "Newsletters, respuestas y prospección consumen horas cada semana sin que lo note.",
+        solutions: [
+          "Redactar newsletters y secuencias de seguimiento con su tono en minutos",
+          "Convertir notas rápidas en respuestas pulidas y personalizadas",
+          "Probar asuntos y personalizar mensajes a escala",
+        ],
+        examplePrompt:
+          "Escribe una secuencia de 3 emails para reactivar a clientes de los que no sabemos hace 6 meses, con nuestro tono cercano y directo.",
+        exampleResult:
+          "Una secuencia lista para editar en segundos — en vez de una página en blanco y una tarde perdida.",
+      },
+      {
+        id: "content",
+        icon: "Megaphone",
+        name: "Marketing y contenido",
+        pain: "Un calendario de contenido que nunca se llena solo.",
+        solutions: [
+          "Generar un mes de publicaciones a partir de una sola idea",
+          "Reutilizar un artículo en posts de LinkedIn, emails y pies de foto",
+          "Mantener una voz de marca coherente en todas partes",
+        ],
+        examplePrompt:
+          "Convierte este caso de éxito en cinco publicaciones de LinkedIn y un newsletter breve, con nuestro tono.",
+        exampleResult:
+          "Una semana de contenido a partir de un documento — redactado, con su marca y listo para programar.",
+      },
+      {
+        id: "sales",
+        icon: "Briefcase",
+        name: "Ventas y propuestas",
+        pain: "Las propuestas y los seguimientos ralentizan todo su pipeline.",
+        solutions: [
+          "Adaptar propuestas a cada cliente en minutos",
+          "Resumir llamadas en próximos pasos y notas para el CRM",
+          "Redactar seguimientos a tiempo para que nada se escape",
+        ],
+        examplePrompt:
+          "Redacta una propuesta a partir de estas notas de reunión, estructurada en objetivos, alcance y precio.",
+        exampleResult:
+          "Un primer borrador listo para el cliente en una pausa de café, no en un día.",
+      },
+      {
+        id: "support",
+        icon: "Headphones",
+        name: "Atención al cliente",
+        pain: "Las preguntas repetitivas se acumulan y los tiempos de respuesta se alargan.",
+        solutions: [
+          "Redactar respuestas precisas y con el tono adecuado al instante",
+          "Crear una FAQ inteligente a partir de tickets pasados",
+          "Clasificar y priorizar una bandeja de entrada saturada",
+        ],
+        examplePrompt:
+          "Responde a este cliente molesto con empatía, reconoce el problema y ofrece dos opciones.",
+        exampleResult:
+          "Respuestas coherentes y cercanas — más rápidas y sin copiar y pegar.",
+      },
+      {
+        id: "research",
+        icon: "Search",
+        name: "Investigación e informes",
+        pain: "Se pierden horas recopilando, leyendo y resumiendo información.",
+        solutions: [
+          "Resumir documentos largos y reuniones en segundos",
+          "Comparar opciones y redactar briefings claros",
+          "Convertir datos en conclusiones fáciles de entender",
+        ],
+        examplePrompt:
+          "Resume este informe de 40 páginas en diez puntos para nuestra dirección, con tres acciones recomendadas.",
+        exampleResult:
+          "Lo esencial en dos minutos — para que decida en vez de solo leer.",
+      },
+      {
+        id: "admin",
+        icon: "ClipboardList",
+        name: "Administración y operaciones",
+        pain: "La agenda, la documentación y la entrada de datos roban foco al trabajo real.",
+        solutions: [
+          "Redactar procedimientos (SOP) y documentación en su formato",
+          "Limpiar y estructurar datos y notas desordenadas",
+          "Automatizar la redacción repetitiva del día a día",
+        ],
+        examplePrompt:
+          "Convierte esta lista rápida en un procedimiento paso a paso que pueda seguir alguien nuevo.",
+        exampleResult:
+          "Documentación que casi se escribe sola — y se mantiene coherente.",
+      },
+    ],
   },
 };
 
