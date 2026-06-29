@@ -9,6 +9,7 @@ const en = {
   nav: {
     why: "Why Xplainery",
     services: "Services",
+    solutions: "Use cases",
     tools: "Free Tools",
     pricing: "Pricing",
     about: "Founder",
@@ -534,6 +535,110 @@ const en = {
       "Book a free 30-minute discovery call. No slides, no obligation — just a clear next step.",
     primary: "Book a Free Discovery Call",
     secondary: "See pricing",
+  },
+
+  useCases: {
+    eyebrow: "Find your quick wins",
+    title: "Where could AI help you most?",
+    subtitle:
+      "Pick an area where you spend too much time. See exactly how AI could lighten the load — and how we'd set it up with your team.",
+    selectHint: "Choose an area",
+    withAi: "With AI, you could",
+    promptLabel: "You ask",
+    resultLabel: "You get",
+    cta: "Set this up with your team",
+    areas: [
+      {
+        id: "email",
+        icon: "Mail",
+        name: "Email & outreach",
+        pain: "Newsletters, replies and outreach quietly eat hours every week.",
+        solutions: [
+          "Draft on-brand newsletters and follow-up sequences in minutes",
+          "Turn rough notes into polished, personalised replies",
+          "Test subject lines and tailor messages at scale",
+        ],
+        examplePrompt:
+          "Write a 3-email re-engagement sequence for clients we haven't heard from in 6 months, in our warm and direct tone.",
+        exampleResult:
+          "A ready-to-edit sequence in seconds — instead of a blank page and a lost afternoon.",
+      },
+      {
+        id: "content",
+        icon: "Megaphone",
+        name: "Marketing & content",
+        pain: "A content calendar that never seems to fill itself.",
+        solutions: [
+          "Generate a month of social posts from a single idea",
+          "Repurpose one blog into LinkedIn posts, emails and captions",
+          "Stay consistent in your brand voice everywhere",
+        ],
+        examplePrompt:
+          "Turn this case study into five LinkedIn posts and a short newsletter, keeping our tone.",
+        exampleResult:
+          "A week of content from one document — drafted, on-brand and ready to schedule.",
+      },
+      {
+        id: "sales",
+        icon: "Briefcase",
+        name: "Sales & proposals",
+        pain: "Proposals and follow-ups slow your whole pipeline down.",
+        solutions: [
+          "Tailor proposals to each client in minutes",
+          "Summarise calls into clear next steps and CRM notes",
+          "Draft timely follow-ups so nothing slips",
+        ],
+        examplePrompt:
+          "Draft a proposal from these meeting notes, structured into goals, scope and pricing.",
+        exampleResult:
+          "A client-ready first draft in a coffee break, not a day.",
+      },
+      {
+        id: "support",
+        icon: "Headphones",
+        name: "Customer support",
+        pain: "Repetitive questions pile up and response times slip.",
+        solutions: [
+          "Draft accurate, on-tone replies instantly",
+          "Build a smart FAQ from your past tickets",
+          "Triage and prioritise a busy inbox",
+        ],
+        examplePrompt:
+          "Reply to this frustrated customer empathetically, acknowledge the issue and offer two options.",
+        exampleResult:
+          "Consistent, caring answers — faster, and without the copy-paste.",
+      },
+      {
+        id: "research",
+        icon: "Search",
+        name: "Research & reports",
+        pain: "Hours lost gathering, reading and summarising information.",
+        solutions: [
+          "Summarise long documents and meetings in seconds",
+          "Compare options and draft clear briefs",
+          "Turn raw data into plain-language takeaways",
+        ],
+        examplePrompt:
+          "Summarise this 40-page report into ten bullets for our leadership team, with three recommended actions.",
+        exampleResult:
+          "The gist in two minutes — so you can decide, not just read.",
+      },
+      {
+        id: "admin",
+        icon: "ClipboardList",
+        name: "Admin & operations",
+        pain: "Scheduling, documentation and data entry steal focus from real work.",
+        solutions: [
+          "Draft SOPs and documentation in your format",
+          "Clean up and structure messy data and notes",
+          "Automate the repetitive writing you do daily",
+        ],
+        examplePrompt:
+          "Turn this rough checklist into a clear, step-by-step SOP a new hire could follow.",
+        exampleResult:
+          "Documentation that practically writes itself — and stays consistent.",
+      },
+    ],
   },
 };
 

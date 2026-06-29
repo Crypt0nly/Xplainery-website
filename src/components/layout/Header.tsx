@@ -40,6 +40,7 @@ export function Header({
   const links = [
     { href: "#why", label: dict.nav.why },
     { href: "#services", label: dict.nav.services },
+    { href: "#solutions", label: dict.nav.solutions },
     { href: "#tools", label: dict.nav.tools },
     { href: "#pricing", label: dict.nav.pricing },
     { href: "#founder", label: dict.nav.about },

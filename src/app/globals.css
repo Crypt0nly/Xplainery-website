@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    /* Light theme — off-white with sage-tinted neutrals (Apple/Notion feel) */
-    --bg: 247 249 246; /* #F7F9F6 */
-    --surface: 255 255 255;
+    /* Light theme — brand palette: Honeydew tint, white surfaces, Evergreen ink */
+    --bg: 246 250 244; /* near-white, lets Honeydew chips read */
+    --surface: 255 255 255; /* White #FFFFFF */
     --elevated: 255 255 255;
-    --ink: 9 20 13; /* #09140D near-black green */
-    --muted: 74 90 80; /* #4A5A50 */
-    --subtle: 107 120 112; /* #6B7870 */
-    --line: 224 230 224; /* sage-tinted border */
+    --ink: 9 18 13; /* near-black green for crisp text */
+    --muted: 74 90 80;
+    --subtle: 107 120 112;
+    --line: 214 228 210; /* soft green-tinted border */
 
-    /* Brand — lime pop + deep forest green (logo palette) */
-    --brand: 102 247 69; /* #66F745 lime — fills/pops, use with dark text */
-    --brand-soft: 232 252 223; /* pale lime tint */
-    --brand-ink: 19 99 41; /* #136329 readable emerald — links/labels/text */
-    --accent: 10 40 16; /* #0A2810 deep forest — dark gradients/decor */
+    /* Brand */
+    --brand: 102 247 69; /* Laser Green #66F745 — fills/pops, use with dark text */
+    --brand-soft: 232 245 228; /* Honeydew #E8F5E4 */
+    --brand-ink: 34 53 40; /* Evergreen #223528 — readable green for links/labels */
+    --accent: 34 53 40; /* Evergreen #223528 — dark gradients/decor */
   }
 
   .dark {
-    --bg: 7 12 9; /* #070C09 */
-    --surface: 13 21 16; /* #0D1510 */
-    --elevated: 19 29 22;
-    --ink: 240 245 240;
-    --muted: 164 180 168;
-    --subtle: 132 148 137;
-    --line: 30 42 33;
+    --bg: 0 0 0; /* Black #000000 */
+    --surface: 18 28 21; /* dark green card */
+    --elevated: 28 42 33;
+    --ink: 232 245 228; /* Honeydew #E8F5E4 — light text */
+    --muted: 150 170 156;
+    --subtle: 120 140 126;
+    --line: 34 53 40; /* Evergreen #223528 */
 
-    --brand: 112 248 80;
-    --brand-soft: 22 44 26;
-    --brand-ink: 138 240 122; /* light lime for links on dark */
-    --accent: 28 92 46;
+    --brand: 102 247 69; /* Laser Green */
+    --brand-soft: 22 38 27; /* dark green chip */
+    --brand-ink: 124 247 96; /* light Laser Green for links on dark */
+    --accent: 34 53 40; /* Evergreen */
   }
 
   * {

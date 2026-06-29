@@ -15,6 +15,7 @@ export function Footer({
   void locale;
   const explore = [
     { href: "#why", label: dict.nav.why },
+    { href: "#solutions", label: dict.nav.solutions },
     { href: "#tools", label: dict.nav.tools },
     { href: "#pricing", label: dict.nav.pricing },
     { href: "#faq", label: dict.nav.faq },
@@ -25,7 +26,6 @@ export function Footer({
   }));
   const company = [
     { href: "#founder", label: dict.nav.about },
-    { href: "#testimonials", label: dict.nav.testimonials },
     { href: "#contact", label: dict.nav.contact },
   ];
 

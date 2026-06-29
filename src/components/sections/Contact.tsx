@@ -51,7 +51,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
         <div className="mt-16 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Booking card */}
           <Reveal className="flex flex-col gap-6">
-            <div className="relative overflow-hidden rounded-4xl border border-brand-ink/30 bg-gradient-to-br from-[#0a2810] to-[#0f3d1c] p-8 text-white shadow-glow">
+            <div className="relative overflow-hidden rounded-4xl border border-brand-ink/30 bg-gradient-to-br from-[#223528] to-[#2c4233] p-8 text-white shadow-glow">
               <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand/20 blur-2xl" />
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/20 text-brand">
                 <CalendarCheck className="h-6 w-6" strokeWidth={2} />
