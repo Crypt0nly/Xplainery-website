@@ -25,7 +25,6 @@ export function Footer({
   }));
   const company = [
     { href: "#founder", label: dict.nav.about },
-    { href: "#testimonials", label: dict.nav.testimonials },
     { href: "#contact", label: dict.nav.contact },
   ];
 

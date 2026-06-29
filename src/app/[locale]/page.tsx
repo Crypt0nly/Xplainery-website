@@ -9,7 +9,6 @@ import { Services } from "@/components/sections/Services";
 import { Tools } from "@/components/sections/Tools";
 import { Pricing } from "@/components/sections/Pricing";
 import { Founder } from "@/components/sections/Founder";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
@@ -33,7 +32,6 @@ export default async function HomePage({
       <Tools dict={dict} locale={locale} />
       <Pricing dict={dict} />
       <Founder dict={dict} />
-      <Testimonials dict={dict} />
       <CTASection dict={dict} />
       <FAQ dict={dict} />
       <Contact dict={dict} />
