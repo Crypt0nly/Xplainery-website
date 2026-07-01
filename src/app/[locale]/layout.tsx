@@ -7,6 +7,7 @@ import { getDictionary } from "@/i18n";
 import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { DesignBar } from "@/components/DesignBar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -110,8 +111,11 @@ export default async function LocaleLayout({
         >
           Skip to content
         </a>
+        <DesignBar active={1} />
         <Header dict={dict} locale={locale} />
-        <main id="main">{children}</main>
+        <main id="main" className="pt-9">
+          {children}
+        </main>
         <Footer dict={dict} locale={locale} />
       </body>
     </html>
