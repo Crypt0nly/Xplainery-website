@@ -70,16 +70,71 @@ const UC_ICONS: Record<string, LucideIcon> = {
   ClipboardList,
 };
 
-/* ================= Nav (mix-blend inverts over any zone) ================= */
-export function OdysseyNav() {
+/* ================= Nav ================= */
+/**
+ * Two modes:
+ * - blend (default): mix-blend-difference inverts the whole bar over any
+ *   zone. Cheap, but it also inverts the logo's green into purple on
+ *   light zones.
+ * - adaptive: probes which [data-navtheme] zone sits under the bar on
+ *   scroll and swaps the correct logo variant + real ink colors.
+ */
+export function OdysseyNav({ adaptive = false }: { adaptive?: boolean }) {
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    if (!adaptive) return;
+    let raf = 0;
+    function update() {
+      raf = 0;
+      // Probe at the bar's own center line (its wrapper is
+      // pointer-events-none, so elementFromPoint skips it and hits the
+      // zone content behind it).
+      const probe = document.elementFromPoint(window.innerWidth / 2, 72);
+      const zone = probe?.closest?.("[data-navtheme]");
+      if (zone) {
+        setTheme(
+          zone.getAttribute("data-navtheme") === "light" ? "light" : "dark",
+        );
+      }
+    }
+    function schedule() {
+      if (!raf) raf = window.requestAnimationFrame(update);
+    }
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, [adaptive]);
+
+  const light = adaptive && theme === "light";
+  const navVars = {
+    "--nav-ink": light ? INK : "#ffffff",
+    "--nav-sub": light ? "rgba(11,26,16,0.65)" : "rgba(232,245,228,0.7)",
+  } as React.CSSProperties;
+
   return (
     <>
-      <div className="pointer-events-none fixed inset-x-0 top-9 z-[85] mix-blend-difference">
+      <div
+        className={cn(
+          "pointer-events-none fixed inset-x-0 top-9 z-[85]",
+          adaptive ? "" : "mix-blend-difference",
+        )}
+        style={navVars}
+      >
         <div className="flex items-center justify-between px-5 py-5 sm:px-10">
           <a href="#top" className="pointer-events-auto flex items-center gap-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-mark-dark.png" alt="Xplainery" className="h-7 w-auto" />
-            <span className="font-display text-base font-extrabold uppercase tracking-widest text-white">
+            <img
+              src={light ? "/logo-mark.png" : "/logo-mark-dark.png"}
+              alt="Xplainery"
+              className="h-7 w-auto"
+            />
+            <span className="font-display text-base font-extrabold uppercase tracking-widest text-[color:var(--nav-ink)] transition-colors duration-300">
               Xplainery
             </span>
           </a>
@@ -94,7 +149,7 @@ export function OdysseyNav() {
               <a
                 key={href}
                 href={href}
-                className="text-[11px] font-bold uppercase tracking-[0.24em] text-white/70 transition-colors hover:text-white"
+                className="text-[11px] font-bold uppercase tracking-[0.24em] text-[color:var(--nav-sub)] transition-colors duration-300 hover:text-[color:var(--nav-ink)]"
               >
                 {label}
               </a>

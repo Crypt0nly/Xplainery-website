@@ -38,7 +38,14 @@ import {
   OdysseyFooter,
 } from "./sections";
 
-export function Odyssey({ dict }: { dict: Dictionary }) {
+export function Odyssey({
+  dict,
+  adaptiveNav = false,
+}: {
+  dict: Dictionary;
+  /** Zone-aware nav (correct logo per zone) instead of mix-blend inversion. */
+  adaptiveNav?: boolean;
+}) {
   const reduce = useReducedMotionSafe();
   const [loaded, setLoaded] = useState(false);
 
@@ -90,7 +97,7 @@ export function Odyssey({ dict }: { dict: Dictionary }) {
       <Cursor />
       <Grain />
       <ScrollProgress />
-      <OdysseyNav />
+      <OdysseyNav adaptive={adaptiveNav} />
 
       {/* Main content sits above the fixed footer; the spacer after it
           exposes the footer as a curtain reveal. */}
@@ -100,6 +107,7 @@ export function Odyssey({ dict }: { dict: Dictionary }) {
 
         {/* ====== ZONE A — light: manifesto + why deck + lab ====== */}
         <section
+          data-navtheme="light"
           className="relative z-20 -mt-[3rem] rounded-t-[3rem]"
           style={{ backgroundColor: PAPER }}
         >
@@ -112,6 +120,7 @@ export function Odyssey({ dict }: { dict: Dictionary }) {
             disables position:sticky, killing the pinned gallery. The
             marquee clips itself. */}
         <section
+          data-navtheme="dark"
           className="relative z-30 -mt-[3rem] rounded-t-[3rem]"
           style={{ backgroundColor: DEEP }}
         >
@@ -160,6 +169,7 @@ export function Odyssey({ dict }: { dict: Dictionary }) {
 
         {/* ====== ZONE C — light: use-case lab + pricing + founder + faq ====== */}
         <section
+          data-navtheme="light"
           className="relative z-40 -mt-[3rem] rounded-t-[3rem]"
           style={{ backgroundColor: PAPER }}
         >
@@ -171,6 +181,7 @@ export function Odyssey({ dict }: { dict: Dictionary }) {
 
         {/* ====== ZONE D — dark: final CTA ====== */}
         <section
+          data-navtheme="dark"
           className="relative z-50 -mt-[3rem] rounded-t-[3rem] rounded-b-[3rem]"
           style={{ backgroundColor: DEEP }}
         >
@@ -185,6 +196,7 @@ export function Odyssey({ dict }: { dict: Dictionary }) {
           <main> would not extend the document's scrollable area. */}
       <div
         aria-hidden
+        data-navtheme="dark"
         className="h-[80vh]"
         style={footerH ? { height: footerH } : undefined}
       />
@@ -218,7 +230,12 @@ function Hero({ dict, loaded }: { dict: Dictionary; loaded: boolean }) {
   const orbY2 = useTransform(smooth, [0, 1], ["0%", "-30%"]);
 
   return (
-    <div ref={wrapRef} className="relative sm:h-[168vh]" style={{ backgroundColor: DEEP }}>
+    <div
+      ref={wrapRef}
+      data-navtheme="dark"
+      className="relative sm:h-[168vh]"
+      style={{ backgroundColor: DEEP }}
+    >
       {/* Pin + clip only from sm up: on small phones the hero sizes to its
           content and scrolls normally so nothing (like the CTA) gets clipped. */}
       <div className="relative flex min-h-screen flex-col overflow-hidden sm:sticky sm:top-0 sm:h-screen">

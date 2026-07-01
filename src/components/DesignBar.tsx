@@ -9,9 +9,10 @@ const DESIGNS = [
   { n: 3, label: "Atelier", href: "/d3" },
   { n: 4, label: "Pulse", href: "/d4" },
   { n: 5, label: "Odyssey", href: "/d5" },
+  { n: 6, label: "Odyssey II", href: "/d6" },
 ] as const;
 
-export function DesignBar({ active }: { active: 1 | 2 | 3 | 4 | 5 }) {
+export function DesignBar({ active }: { active: 1 | 2 | 3 | 4 | 5 | 6 }) {
   return (
     <div className="fixed inset-x-0 top-0 z-[90] flex h-9 items-center justify-center gap-1.5 border-b border-white/10 bg-[#04120a] px-3">
       <span className="mr-1 hidden text-[10px] font-bold uppercase tracking-[0.22em] text-[#E8F5E4]/45 sm:block">

@@ -31,8 +31,8 @@ function getPreferredLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Design concept routes (/d2–/d5) are locale-agnostic previews.
-  if (/^\/d[2-5](\/|$)/.test(pathname)) {
+  // Design concept routes (/d2–/d6) are locale-agnostic previews.
+  if (/^\/d[2-6](\/|$)/.test(pathname)) {
     return NextResponse.next();
   }
 
