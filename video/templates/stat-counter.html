@@ -44,7 +44,7 @@
   const q = new URLSearchParams(location.search);
   const value = parseFloat(q.get('value') || '87');
   const prefix = q.get('prefix') || '';
-  const suffix = q.get('suffix') || '%';
+  const suffix = q.has('suffix') ? q.get('suffix') : '%';
   const label = q.get('label') || 'faster than manual editing';
   const color = q.get('color') || 'coral'; // coral | green | blue | cream
   const decimals = (q.get('value') || '').includes('.') ? 1 : 0;
