@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="_brand.css">
+<style>
+  .wrap { text-align: center; z-index: 1; }
+  .mark { width: 300px; height: auto; opacity: 0; will-change: transform, opacity, filter; }
+  .wordmark {
+    font-weight: 800;
+    font-size: 110px;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    margin-top: 44px;
+    opacity: 0;
+  }
+  .tagline {
+    font-family: var(--mono);
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-top: 26px;
+    opacity: 0;
+  }
+  .glow {
+    position: absolute;
+    width: 900px; height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217,119,87,0.22) 0%, rgba(217,119,87,0) 65%);
+    opacity: 0;
+    z-index: 0;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <img class="topo-bg" src="../vendor/topo.svg">
+  <div class="glow" id="glow"></div>
+  <div class="wrap">
+    <img class="mark" id="mark" src="../../public/logo-mark-dark.png">
+    <div class="wordmark" id="wordmark"></div>
+    <div class="tagline" id="tagline"></div>
+  </div>
+</div>
+<script src="../vendor/gsap.min.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('wordmark').textContent = q.get('name') || 'Xplainery';
+  const tagline = q.get('tagline') || '';
+  const tagEl = document.getElementById('tagline');
+  if (tagline) tagEl.textContent = tagline; else tagEl.style.display = 'none';
+
+  const tl = gsap.timeline();
+  // fromTo with explicit end states — never from() on opacity:0 elements.
+  tl.fromTo('#mark',
+    { opacity: 0, scale: 0.4, filter: 'blur(20px)' },
+    { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.8, ease: 'back.out(1.4)' }, 0.1);
+  tl.fromTo('#glow', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1.1, ease: 'power2.out' }, 0.2);
+  tl.fromTo('#wordmark', { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.55);
+  if (tagline) tl.fromTo('#tagline', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.85);
+  // Ambient glow breathing — direct gsap.to(), off the main timeline.
+  gsap.to('#glow', { scale: 1.08, duration: 1.8, ease: 'sine.inOut', repeat: -1, yoyo: true, delay: 1.4 });
+</script>
+</body>
+</html>

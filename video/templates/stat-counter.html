@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="_brand.css">
+<style>
+  .wrap { text-align: center; z-index: 1; }
+  .num {
+    font-weight: 800;
+    font-size: 300px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--coral);
+    font-variant-numeric: tabular-nums;
+  }
+  .label {
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-top: 28px;
+    opacity: 0;
+  }
+  .ring {
+    position: absolute;
+    width: 780px; height: 780px;
+    border: 3px solid var(--coral);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 0;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <img class="topo-bg" src="../vendor/topo.svg">
+  <div class="ring" id="ring"></div>
+  <div class="wrap">
+    <div class="num" id="num">0</div>
+    <div class="label" id="label"></div>
+  </div>
+</div>
+<script src="../vendor/gsap.min.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  const value = parseFloat(q.get('value') || '87');
+  const prefix = q.get('prefix') || '';
+  const suffix = q.get('suffix') || '%';
+  const label = q.get('label') || 'faster than manual editing';
+  const color = q.get('color') || 'coral'; // coral | green | blue | cream
+  const decimals = (q.get('value') || '').includes('.') ? 1 : 0;
+
+  document.getElementById('label').textContent = label;
+  const numEl = document.getElementById('num');
+  const colorMap = { coral: '#D97757', green: '#4CD964', blue: '#4080F0', cream: '#EDD9BC' };
+  numEl.style.color = colorMap[color] || colorMap.coral;
+  document.getElementById('ring').style.borderColor = numEl.style.color;
+
+  const state = { v: 0 };
+  const fmt = v => prefix + v.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
+  numEl.textContent = fmt(0);
+
+  const tl = gsap.timeline();
+  tl.fromTo('.wrap', { opacity: 0, scale: 0.82 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.6)' }, 0);
+  tl.to(state, {
+    v: value, duration: 1.6, ease: 'power2.out',
+    onUpdate: () => { numEl.textContent = fmt(state.v); }
+  }, 0.15);
+  tl.fromTo('#label', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.9);
+  tl.fromTo('#ring', { opacity: 0, scale: 0.6 }, { opacity: 0.35, scale: 1, duration: 1.0, ease: 'power3.out' }, 0.2);
+  // Slow ring pulse — off-timeline so the playhead never drifts.
+  gsap.to('#ring', { scale: 1.06, duration: 1.6, ease: 'sine.inOut', repeat: -1, yoyo: true, delay: 1.3 });
+</script>
+</body>
+</html>

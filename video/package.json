@@ -1,0 +1,15 @@
+{
+  "name": "xplainery-video-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HTML/GSAP motion-graphic scenes rendered to MP4 with headless Chromium + ffmpeg",
+  "scripts": {
+    "render": "node render-scene.js"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "gsap": "^3.15.0",
+    "puppeteer-core": "^25.3.0"
+  }
+}
