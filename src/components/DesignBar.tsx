@@ -11,13 +11,14 @@ const DESIGNS = [
   { n: 5, label: "Odyssey", href: "/d5" },
   { n: 6, label: "Odyssey II", href: "/d6" },
   { n: 7, label: "Classic II", href: "/d7" },
-  { n: 8, label: "NEWEST WEBSITE", href: "/d8" },
+  { n: 8, label: "Draft", href: "/d8" },
+  { n: 9, label: "NEWEST WEBSITE", href: "/d9" },
 ] as const;
 
 export function DesignBar({
   active,
 }: {
-  active: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  active: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 }) {
   return (
     <div className="fixed inset-x-0 top-0 z-[90] flex h-9 items-center justify-center gap-1.5 border-b border-white/10 bg-[#04120a] px-3">
