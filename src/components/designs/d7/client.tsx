@@ -46,7 +46,7 @@ export function D7Ambience() {
 }
 
 /* ================= Light preloader ================= */
-function LightPreloader({ onDone }: { onDone: () => void }) {
+export function LightPreloader({ onDone }: { onDone: () => void }) {
   const [count, setCount] = useState(0);
   const doneRef = useRef(onDone);
   doneRef.current = onDone;
