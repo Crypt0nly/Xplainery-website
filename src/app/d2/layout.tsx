@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "../globals.css";
-import { DesignBar } from "@/components/DesignBar";
+import { ArchiveBar } from "@/components/ArchiveBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +34,7 @@ export default function D2Layout({
   return (
     <html lang="en" className={`${inter.variable} ${grotesk.variable}`}>
       <body className="bg-black font-sans text-[#E8F5E4] antialiased">
-        <DesignBar active={2} />
+        <ArchiveBar />
         {children}
       </body>
     </html>

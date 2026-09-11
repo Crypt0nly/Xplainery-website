@@ -1,42 +1,38 @@
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
-import { StructuredData } from "@/components/StructuredData";
-import { Hero } from "@/components/sections/Hero";
-import { Logos } from "@/components/sections/Logos";
-import { Why } from "@/components/sections/Why";
-import { Services } from "@/components/sections/Services";
-import { Solutions } from "@/components/sections/Solutions";
-import { Tools } from "@/components/sections/Tools";
-import { Pricing } from "@/components/sections/Pricing";
-import { Founder } from "@/components/sections/Founder";
-import { CTASection } from "@/components/sections/CTASection";
-import { FAQ } from "@/components/sections/FAQ";
-import { Contact } from "@/components/sections/Contact";
+import { SiteHero } from "@/components/site/Hero";
+import { PathFinder } from "@/components/site/PathFinder";
+import { Industries } from "@/components/site/Industries";
+import { QuickWins } from "@/components/site/QuickWins";
+import { ServicesExplorer } from "@/components/site/ServicesExplorer";
+import { ArticleFour } from "@/components/site/ArticleFour";
+import { PricingGrid } from "@/components/site/PricingGrid";
+import { ROISection } from "@/components/site/ROISection";
+import { WhyGrid } from "@/components/site/WhyGrid";
+import { SiteFounder } from "@/components/site/Founder";
+import { SiteFaq } from "@/components/site/Faq";
+import { ContactSection } from "@/components/site/ContactSection";
 
-export default async function HomePage({
-  params,
-}: {
-  params: { locale: string };
-}) {
+export default async function HomePage({ params }: { params: { locale: string } }) {
   if (!isLocale(params.locale)) notFound();
   const locale = params.locale as Locale;
   const dict = await getDictionary(locale);
 
   return (
     <>
-      <StructuredData dict={dict} locale={locale} />
-      <Hero dict={dict} />
-      <Logos dict={dict} />
-      <Why dict={dict} />
-      <Services dict={dict} />
-      <Solutions dict={dict} />
-      <Tools dict={dict} locale={locale} />
-      <Pricing dict={dict} />
-      <Founder dict={dict} />
-      <CTASection dict={dict} />
-      <FAQ dict={dict} />
-      <Contact dict={dict} />
+      <SiteHero dict={dict} />
+      <PathFinder dict={dict} />
+      <Industries dict={dict} />
+      <QuickWins dict={dict} />
+      <ServicesExplorer dict={dict} />
+      <ArticleFour dict={dict} />
+      <PricingGrid dict={dict} />
+      <ROISection dict={dict} locale={locale} />
+      <WhyGrid dict={dict} />
+      <SiteFounder dict={dict} />
+      <SiteFaq dict={dict} />
+      <ContactSection dict={dict} />
     </>
   );
 }

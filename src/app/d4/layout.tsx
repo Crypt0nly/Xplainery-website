@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Manrope } from "next/font/google";
 import "../globals.css";
-import { DesignBar } from "@/components/DesignBar";
+import { ArchiveBar } from "@/components/ArchiveBar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -34,7 +34,7 @@ export default function D4Layout({
   return (
     <html lang="en" className={`${manrope.variable} ${outfit.variable}`}>
       <body className="bg-white font-sans text-[#0B1A10] antialiased">
-        <DesignBar active={4} />
+        <ArchiveBar />
         {children}
       </body>
     </html>

@@ -9,6 +9,10 @@ import {
   Users,
   MapPin,
   Mic,
+  Compass,
+  Workflow,
+  GraduationCap,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -23,6 +27,10 @@ const map: Record<string, LucideIcon> = {
   Users,
   MapPin,
   Mic,
+  Compass,
+  Workflow,
+  GraduationCap,
+  Sparkles,
 };
 
 export function Icon({

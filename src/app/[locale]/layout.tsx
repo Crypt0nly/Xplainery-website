@@ -5,9 +5,8 @@ import "../globals.css";
 import { locales, isLocale, type Locale, localeMeta } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { site } from "@/lib/site";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { DesignBar } from "@/components/DesignBar";
+import { SiteHeader } from "@/components/site/Header";
+import { SiteFooter } from "@/components/site/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -82,7 +81,6 @@ export async function generateMetadata({
   };
 }
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&m)){document.documentElement.classList.add('dark');}}catch(e){}})();`;
 
 export default async function LocaleLayout({
   children,
@@ -99,11 +97,7 @@ export default async function LocaleLayout({
     <html
       lang={localeMeta[locale].htmlLang}
       className={`${manrope.variable} ${exo2.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="bg-bg font-sans text-ink antialiased">
         <a
           href="#main"
@@ -111,12 +105,9 @@ export default async function LocaleLayout({
         >
           Skip to content
         </a>
-        <DesignBar active={1} />
-        <Header dict={dict} locale={locale} />
-        <main id="main" className="pt-9">
-          {children}
-        </main>
-        <Footer dict={dict} locale={locale} />
+        <SiteHeader dict={dict} locale={locale} />
+        <main id="main">{children}</main>
+        <SiteFooter dict={dict} />
       </body>
     </html>
   );

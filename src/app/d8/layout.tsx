@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Exo_2, Manrope } from "next/font/google";
 import "../globals.css";
-import { DesignBar } from "@/components/DesignBar";
+import { ArchiveBar } from "@/components/ArchiveBar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -35,7 +35,7 @@ export default function D8Layout({
   return (
     <html lang="en" className={`${manrope.variable} ${exo2.variable}`}>
       <body className="bg-bg font-sans text-ink antialiased">
-        <DesignBar active={8} />
+        <ArchiveBar />
         {children}
       </body>
     </html>

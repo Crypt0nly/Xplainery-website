@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "../globals.css";
-import { DesignBar } from "@/components/DesignBar";
+import { ArchiveBar } from "@/components/ArchiveBar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -35,7 +35,7 @@ export default function D3Layout({
   return (
     <html lang="en" className={`${manrope.variable} ${fraunces.variable}`}>
       <body className="bg-[#F6FAF1] font-sans text-[#223528] antialiased">
-        <DesignBar active={3} />
+        <ArchiveBar />
         {children}
       </body>
     </html>

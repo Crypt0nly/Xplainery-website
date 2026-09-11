@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, Manrope } from "next/font/google";
 import "../globals.css";
-import { DesignBar } from "@/components/DesignBar";
+import { ArchiveBar } from "@/components/ArchiveBar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -37,7 +37,7 @@ export default function D5Layout({
         className="font-sans antialiased"
         style={{ backgroundColor: "#050D08", color: "#E8F5E4" }}
       >
-        <DesignBar active={5} />
+        <ArchiveBar />
         {children}
       </body>
     </html>
