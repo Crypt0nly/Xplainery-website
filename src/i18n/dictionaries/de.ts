@@ -814,10 +814,6 @@ const de: Dictionary = {
       ],
       note: "Preise Dritter sind ungefähre Angaben und ändern sich; Kategorien dienen nur der Orientierung.",
     },
-    redFlag: {
-      title: "Worauf Sie achten sollten",
-      body: "Manche Anbieter verkaufen nahezu identische „Trained Professional“-Zertifikate für sieben oder mehr nicht zusammenhängende EU-Regulierungen — AI Act, DORA, NIS2, Data Act und so weiter — für jeweils ein paar hundert Euro, mit aggressivem Upselling von einem Kauf zum nächsten. Eine Organisation, die austauschbare Zertifikate für jede Regulierung zugleich ausstellt, signalisiert Volumenmarketing statt Tiefe. Wenn es um Glaubwürdigkeit geht: Finger weg.",
-    },
   },
 
   pricingGrid: {

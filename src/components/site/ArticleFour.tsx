@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertTriangle, ArrowUpRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Check, ShieldCheck } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
@@ -101,15 +101,6 @@ export function ArticleFour({ dict }: { dict: Dictionary }) {
           <p className="mt-4 text-xs text-white/40">{t.certs.note}</p>
         </Reveal>
 
-        <Reveal className="mt-10">
-          <div className="flex gap-4 rounded-3xl border border-amber-400/30 bg-amber-400/[0.06] p-6">
-            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" strokeWidth={2} />
-            <div>
-              <p className="font-display text-base font-bold text-white">{t.redFlag.title}</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-white/70">{t.redFlag.body}</p>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

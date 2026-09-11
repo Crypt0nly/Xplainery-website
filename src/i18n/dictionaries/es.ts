@@ -814,10 +814,6 @@ const es: Dictionary = {
       ],
       note: "Los precios de terceros son aproximados y cambian; las categorías son solo orientativas.",
     },
-    redFlag: {
-      title: "Con qué tener cuidado",
-      body: "Algunos proveedores venden certificados casi idénticos de «profesional formado» para siete o más normativas europeas sin relación entre sí —Ley de IA, DORA, NIS2, Ley de Datos, etc.— por un par de cientos de euros cada uno, con ventas adicionales agresivas de una compra a la siguiente. Que una misma organización emita certificados intercambiables para todas las normativas a la vez indica marketing de volumen, no profundidad. Si lo que importa es la credibilidad, evítelo.",
-    },
   },
 
   pricingGrid: {

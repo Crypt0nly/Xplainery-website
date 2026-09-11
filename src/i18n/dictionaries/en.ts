@@ -812,10 +812,6 @@ const en = {
       ],
       note: "Third-party prices are approximate and change; categories are for orientation only.",
     },
-    redFlag: {
-      title: "What to watch out for",
-      body: "Some providers sell near-identical “trained professional” certificates across seven or more unrelated EU regulations — AI Act, DORA, NIS2, Data Act and so on — for a couple of hundred euros each, with heavy upselling from one purchase to the next. One organisation issuing interchangeable certificates for every regulation at once signals volume marketing rather than depth. If credibility is the point, avoid it.",
-    },
   },
 
   pricingGrid: {
