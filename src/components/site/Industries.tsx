@@ -3,14 +3,13 @@
 import type { Dictionary } from "@/i18n";
 import { QUICKWIN_EVENT } from "./events";
 
-// Industry index → quick-win area id. Only direct matches; others just scroll.
-const AREA_BY_INDEX: Record<number, string> = { 5: "content" };
+// Industries and quick-win areas share the same order, so a pill opens its tab 1:1.
 
 export function Industries({ dict }: { dict: Dictionary }) {
   const items = dict.logos.items;
 
   function pick(index: number) {
-    window.dispatchEvent(new CustomEvent(QUICKWIN_EVENT, { detail: AREA_BY_INDEX[index] ?? null }));
+    window.dispatchEvent(new CustomEvent(QUICKWIN_EVENT, { detail: index }));
     document.querySelector("#quick-wins")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 

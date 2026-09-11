@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check, Mail, Megaphone, Briefcase, Headphones, Search, ClipboardList, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Check, Scale, Calculator, Briefcase, Factory, Stethoscope, Megaphone, type LucideIcon } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { QUICKWIN_EVENT } from "./events";
 
-const ICONS: Record<string, LucideIcon> = { Mail, Megaphone, Briefcase, Headphones, Search, ClipboardList };
+const ICONS: Record<string, LucideIcon> = { Scale, Calculator, Briefcase, Factory, Stethoscope, Megaphone };
 
 export function QuickWins({ dict }: { dict: Dictionary }) {
   const t = dict.useCases;
@@ -19,8 +19,8 @@ export function QuickWins({ dict }: { dict: Dictionary }) {
 
   useEffect(() => {
     function onPick(e: Event) {
-      const id = (e as CustomEvent<string | null>).detail;
-      setActiveId(id && t.areas.some((a) => a.id === id) ? id : t.areas[0].id);
+      const index = (e as CustomEvent<number>).detail;
+      setActiveId(t.areas[index]?.id ?? t.areas[0].id);
     }
     window.addEventListener(QUICKWIN_EVENT, onPick);
     return () => window.removeEventListener(QUICKWIN_EVENT, onPick);
@@ -34,7 +34,7 @@ export function QuickWins({ dict }: { dict: Dictionary }) {
         <Reveal className="mx-auto mt-12 max-w-5xl">
           <div className="flex flex-wrap justify-center gap-2.5" role="tablist" aria-label={t.selectHint}>
             {t.areas.map((area) => {
-              const Icon = ICONS[area.icon] ?? Mail;
+              const Icon = ICONS[area.icon] ?? Briefcase;
               const selected = area.id === activeId;
               return (
                 <button
