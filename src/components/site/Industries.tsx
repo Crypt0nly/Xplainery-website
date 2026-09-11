@@ -19,7 +19,8 @@ export function Industries({ dict }: { dict: Dictionary }) {
       <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-subtle">{dict.logos.label}</p>
       <div className="mask-fade-x mt-6 overflow-hidden">
         <div className="flex w-max animate-marquee items-center gap-3 hover:[animation-play-state:paused]">
-          {[...items, ...items].map((item, i) => (
+          {/* Many copies so the -50% marquee loop never runs dry on wide screens. */}
+          {Array.from({ length: 10 }, () => items).flat().map((item, i) => (
             <button
               key={`${item}-${i}`}
               type="button"
