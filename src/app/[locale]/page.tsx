@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { SiteHero } from "@/components/site/Hero";
-import { PathFinder } from "@/components/site/PathFinder";
 import { Industries } from "@/components/site/Industries";
 import { QuickWins } from "@/components/site/QuickWins";
 import { ServicesExplorer } from "@/components/site/ServicesExplorer";
@@ -22,14 +21,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
   return (
     <>
       <SiteHero dict={dict} />
-      <PathFinder dict={dict} />
       <Industries dict={dict} />
       <QuickWins dict={dict} />
+      <WhyGrid dict={dict} />
       <ServicesExplorer dict={dict} />
       <ArticleFour dict={dict} />
       <PricingGrid dict={dict} />
       <ROISection dict={dict} locale={locale} />
-      <WhyGrid dict={dict} />
       <SiteFounder dict={dict} />
       <SiteFaq dict={dict} />
       <ContactSection dict={dict} />

@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarCheck, Check } from "lucide-react";
+import { ArrowRight, CalendarCheck } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { site } from "@/lib/site";
-import { Magnetic, SplitWords, TiltCard, useReducedMotionSafe } from "@/components/designs/d5/effects";
+import { Magnetic, SplitWords, useReducedMotionSafe } from "@/components/designs/d5/effects";
+import { PathFinder } from "./PathFinder";
 
 export function SiteHero({ dict }: { dict: Dictionary }) {
   const t = dict.hero;
@@ -73,45 +74,7 @@ export function SiteHero({ dict }: { dict: Dictionary }) {
           transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-md lg:max-w-none"
         >
-          <TiltCard max={5} className="rounded-4xl">
-            <div className="card overflow-hidden rounded-4xl shadow-lift">
-              <div className="flex items-center gap-2 border-b border-line bg-elevated px-4 py-3">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-                <span className="ml-3 text-xs font-medium text-subtle">Xplainery · AI Workspace</span>
-              </div>
-              <div className="space-y-4 p-5">
-                <div className="flex justify-end">
-                  <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-brand px-4 py-2.5 text-sm text-[#08140d]">{t.floatingCards.one}</div>
-                </div>
-                <div className="flex gap-2.5">
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-ink to-accent text-[10px] font-bold text-white">AI</div>
-                  <div className="max-w-[85%] space-y-2 rounded-2xl rounded-tl-sm border border-line bg-bg px-4 py-3">
-                    <div className="h-2.5 w-44 rounded-full bg-line" />
-                    <div className="h-2.5 w-52 rounded-full bg-line" />
-                    <div className="h-2.5 w-36 rounded-full bg-line" />
-                    <div className="mt-3 flex gap-2">
-                      <span className="rounded-lg bg-brand-soft px-2 py-1 text-[11px] font-medium text-brand-ink">Draft ready</span>
-                      <span className="rounded-lg bg-accent/10 px-2 py-1 text-[11px] font-medium text-accent">On-brand</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 rounded-2xl border border-line bg-bg px-4 py-3">
-                  <div className="h-2.5 flex-1 rounded-full bg-line" />
-                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-[#08140d]">
-                    <ArrowRight className="h-4 w-4" strokeWidth={2.25} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TiltCard>
-          <motion.div animate={reduce ? undefined : { y: [0, -10, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute -left-4 -top-5 hidden rounded-2xl border border-line bg-elevated px-4 py-3 shadow-card sm:block lg:-left-8">
-            <p className="flex items-center gap-2 text-xs font-semibold text-ink"><Check className="h-3.5 w-3.5 text-brand-ink" strokeWidth={2.5} />{t.floatingCards.two}</p>
-          </motion.div>
-          <motion.div animate={reduce ? undefined : { y: [0, 10, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.8 }} className="absolute -bottom-5 -right-2 hidden rounded-2xl border border-line bg-elevated px-4 py-3 shadow-card sm:block lg:-right-6">
-            <p className="text-xs font-semibold text-brand-ink">{t.floatingCards.three}</p>
-          </motion.div>
+          <PathFinder dict={dict} />
         </motion.div>
       </div>
     </section>
