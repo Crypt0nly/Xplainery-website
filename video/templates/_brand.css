@@ -1,0 +1,60 @@
+/* Brand tokens + shared stage plumbing for all scene templates. */
+@import url('../vendor/fonts.css');
+
+:root {
+  --ink: #0A0808;
+  --cream: #EDD9BC;
+  --coral: #D97757;
+  --green: #4CD964;
+  --blue: #4080F0;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--ink);
+  overflow: hidden;
+  font-family: var(--sans);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Topographic contour background — subtle cream lines on ink. */
+.topo-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* IG Reel safe zones (1080x1920): top 220px = handle/follow,
+   bottom 420px = caption/actions. Add class="safe-ig" to .stage
+   to pad content away from both. */
+.safe-ig { padding: 220px 60px 420px; }
+
+/* Debug overlay: add class="show-zones" to body to visualize safe zones. */
+.show-zones::before, .show-zones::after {
+  content: '';
+  position: fixed;
+  left: 0; right: 0;
+  background: rgba(217, 119, 87, 0.15);
+  border-bottom: 1px dashed var(--coral);
+  z-index: 9999;
+  pointer-events: none;
+}
+.show-zones::before { top: 0; height: 220px; }
+.show-zones::after { bottom: 0; height: 420px; border-bottom: none; border-top: 1px dashed var(--coral); }

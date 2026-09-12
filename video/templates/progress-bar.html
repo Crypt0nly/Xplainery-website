@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="_brand.css">
+<style>
+  .wrap { width: 860px; z-index: 1; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; }
+  .plabel { font-size: 46px; font-weight: 700; color: var(--cream); }
+  .pct { font-family: var(--mono); font-size: 52px; font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; }
+  .track {
+    height: 44px;
+    background: rgba(237, 217, 188, 0.1);
+    border-radius: 22px;
+    overflow: hidden;
+  }
+  .fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--green), #7CE98A);
+    border-radius: 22px;
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+  .sub { margin-top: 26px; font-family: var(--mono); font-size: 26px; color: rgba(237,217,188,0.5); opacity: 0; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <img class="topo-bg" src="../vendor/topo.svg">
+  <div class="wrap">
+    <div class="row">
+      <div class="plabel" id="plabel"></div>
+      <div class="pct" id="pct">0%</div>
+    </div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="sub" id="sub"></div>
+  </div>
+</div>
+<script src="../vendor/gsap.min.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  const pct = parseFloat(q.get('pct') || '100');
+  const label = q.get('label') || 'Rendering…';
+  const sub = q.get('sub') || '';
+  const color = q.get('color') || 'green';
+
+  document.getElementById('plabel').textContent = label;
+  const subEl = document.getElementById('sub');
+  if (sub) subEl.textContent = sub; else subEl.style.display = 'none';
+  const colorMap = { coral: ['#D97757', '#E89B7F'], green: ['#4CD964', '#7CE98A'], blue: ['#4080F0', '#6FA3F5'] };
+  const [c1, c2] = colorMap[color] || colorMap.green;
+  document.getElementById('fill').style.background = `linear-gradient(90deg, ${c1}, ${c2})`;
+  document.getElementById('pct').style.color = c1;
+
+  const pctEl = document.getElementById('pct');
+  const state = { v: 0 };
+  const tl = gsap.timeline();
+  tl.fromTo('.wrap', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0);
+  tl.fromTo('#fill', { scaleX: 0 }, { scaleX: pct / 100, duration: 1.7, ease: 'power2.inOut' }, 0.35);
+  tl.to(state, {
+    v: pct, duration: 1.7, ease: 'power2.inOut',
+    onUpdate: () => { pctEl.textContent = Math.round(state.v) + '%'; }
+  }, 0.35);
+  if (sub) tl.fromTo('#sub', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.6);
+</script>
+</body>
+</html>

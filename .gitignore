@@ -31,3 +31,7 @@ next-env.d.ts
 # editor
 .vscode/
 .idea/
+
+# video pipeline
+/video/node_modules/
+/video/out/

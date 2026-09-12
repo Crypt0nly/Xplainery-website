@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="_brand.css">
+<style>
+  .term {
+    width: 920px;
+    background: #141010;
+    border: 1px solid rgba(237, 217, 188, 0.14);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+    z-index: 1;
+    opacity: 0;
+  }
+  .term-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 22px 26px;
+    background: rgba(237, 217, 188, 0.05);
+    border-bottom: 1px solid rgba(237, 217, 188, 0.1);
+  }
+  .dot { width: 18px; height: 18px; border-radius: 50%; }
+  .dot:nth-child(1) { background: #FF5F57; }
+  .dot:nth-child(2) { background: #FEBC2E; }
+  .dot:nth-child(3) { background: #28C840; }
+  .term-title { font-family: var(--mono); font-size: 22px; color: rgba(237,217,188,0.5); margin-left: 14px; }
+  .term-body {
+    padding: 36px 40px 44px;
+    font-family: var(--mono);
+    font-size: 30px;
+    line-height: 1.85;
+    min-height: 420px;
+    color: var(--cream);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .line { display: block; }
+  .prompt { color: var(--green); font-weight: 700; }
+  .out { color: rgba(237,217,188,0.65); }
+  .caret {
+    display: inline-block;
+    width: 16px; height: 34px;
+    background: var(--coral);
+    vertical-align: -6px;
+    margin-left: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <img class="topo-bg" src="../vendor/topo.svg">
+  <div class="term" id="term">
+    <div class="term-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="term-title" id="ttitle"></div>
+    </div>
+    <div class="term-body" id="body"></div>
+  </div>
+</div>
+<script src="../vendor/gsap.min.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  // lines: pipe-separated. Prefix "$ " renders as a typed command; "> " as dimmed output.
+  const lines = (q.get('lines') || '$ npx render scene-01.html|> rendering 240 frames…|> done in 12.4s ✓').split('|');
+  document.getElementById('ttitle').textContent = q.get('title') || 'xplainery — pipeline';
+
+  const body = document.getElementById('body');
+  const tl = gsap.timeline();
+  tl.fromTo('#term', { opacity: 0, y: 60, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'power3.out' }, 0);
+
+  let t = 0.7;
+  lines.forEach(raw => {
+    const isCmd = raw.startsWith('$ ');
+    const el = document.createElement('span');
+    el.className = 'line' + (isCmd ? '' : ' out');
+    body.appendChild(el);
+    if (isCmd) {
+      const text = raw.slice(2);
+      const chars = text.length;
+      const state = { n: 0 };
+      // Type character-by-character, deterministic under seek.
+      tl.to(state, {
+        n: chars, duration: Math.min(1.6, 0.045 * chars), ease: 'none', snap: { n: 1 },
+        onUpdate: () => { el.innerHTML = '<span class="prompt">$ </span>' + text.slice(0, state.n); }
+      }, t);
+      el.innerHTML = '<span class="prompt">$ </span>';
+      t += Math.min(1.6, 0.045 * chars) + 0.25;
+    } else {
+      const text = raw.startsWith('> ') ? raw.slice(2) : raw;
+      el.textContent = text;
+      tl.fromTo(el, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.3, ease: 'power2.out' }, t);
+      t += 0.4;
+    }
+  });
+  const caret = document.createElement('span');
+  caret.className = 'caret';
+  body.appendChild(caret);
+  // Caret blink — off-timeline (steps keep it crisp), never drifts the playhead.
+  gsap.to('.caret', { opacity: 0, duration: 0.55, repeat: -1, yoyo: true, ease: 'steps(1)' });
+</script>
+</body>
+</html>
